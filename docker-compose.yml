@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  mongo:
+    image: 'bitnami/mongodb:latest'
+    restart: on-failure
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+    ports:
+      - "27017:27017"
+
+volumes:
+  dbdata:
+# this compomse no has it https://thepracticaldeveloper.com/2017/12/11/dockerize-spring-boot/ , but  that exmaple is beautiful because implements scale
